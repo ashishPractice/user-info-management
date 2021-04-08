@@ -1,0 +1,12 @@
+#main_div{
+    width: 500px;
+    height: 500px;
+    background-color: lightcyan;
+    margin: 10px 0px 0px 150px;
+}
+
+.common_div{
+    width: border-box;
+    padding: 10px;
+
+}
