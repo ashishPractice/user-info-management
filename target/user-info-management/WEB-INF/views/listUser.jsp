@@ -11,6 +11,8 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,7 +69,9 @@
             <th>Nationality</th>
             <th>DOB</th>
             <th>Comment</th>
+            <sec:authorize access="hasRole('ROLE_ADMIN') and isAuthenticated()">
             <th>Action</th>
+            </sec:authorize>
 
         </tr>
         </thead>
@@ -85,11 +89,12 @@
                 <td>${user.nationality}</td>
                 <td>${user.dob}</td>
                 <td>${user.comment}</td>
+                <sec:authorize access="hasRole('ROLE_ADMIN') and isAuthenticated()">
                 <td>
                     <a href="editUser?id=${user.id}" class="btn btn-primary">Edit</a>
                     <a href="deleteUser?id=${user.id}" class="btn btn-danger">Delete</a>
                 </td>
-
+                </sec:authorize>
 
             </tr>
         </c:forEach>

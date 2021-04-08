@@ -7,28 +7,27 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-<!--    <security:http security="none" pattern="/logout" />-->
-<!--    <security:http security="none" pattern="/resources/**"/>-->
+    <security:http security="none" pattern="/logout" />
+    <security:http security="none" pattern="/resources/**"/>
 
     <security:http use-expressions="true" auto-config="true">
 
-<!--        <security:intercept-url pattern="/login"-->
-<!--                                access="permitAll" />-->
+        <security:intercept-url pattern="/loginPage" access="permitAll" />
 
 <!--        <security:intercept-url pattern="/forgot-password"-->
 <!--                                access="permitAll" />-->
 
-<!--        <security:intercept-url pattern="/accessdenied"-->
-<!--                                access="permitAll" />-->
+        <security:intercept-url pattern="/accessDenied" access="permitAll" />
 
-<!--        <security:logout delete-cookies="JSESSIONID"-->
-<!--                         logout-success-url="/logout" invalidate-session="true" />-->
+        <security:logout delete-cookies="JSESSIONID"
+                         logout-success-url="/logout" invalidate-session="true" />
 
 <!--        <security:intercept-url pattern="/**"-->
 <!--                                access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')" />-->
 
-        <security:form-login login-page="/loginPage"
-                             always-use-default-target="true" default-target-url="/home"
+        <security:form-login login-processing-url="/loginPage"
+                             always-use-default-target="true"
+                             default-target-url="/home"
                              authentication-failure-url="/accessDenied" />
 
         <security:csrf disabled="true" />

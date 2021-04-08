@@ -8,8 +8,10 @@
     <div class="card card-container">
         <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
         <img id="profile-img" class="profile-img-card" src="/resources/image/loginImage.png" style="width: 150px"/>
+<%--        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />--%>
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" action="loginPage" method="post">
+            <span class="text-danger">${message}</span>
             <span id="reauth-email" class="reauth-email"></span>
             <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>

@@ -29,7 +29,7 @@ public class CustomUserServiceImpl implements UserDetailsService {
         }
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-                true,true,true,true,getAuthorities(""));
+                true,true,true,true,getAuthorities(user.getRole().getRoleName()));
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities(String roleName){

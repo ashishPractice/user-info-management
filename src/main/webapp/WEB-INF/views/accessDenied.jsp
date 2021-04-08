@@ -9,8 +9,18 @@
 <html>
 <head>
     <title>Access Denied</title>
+    <style>
+        body {
+            height: 100%;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33))
+        }
+    </style>
 </head>
 <body>
-<H1>You are unauthorized to access this page</H1>
+
+<div class="text-center" style="position: fixed; top: 50%; left: 35%">
+    <H1>You are unauthorized to access this page</H1>
+</div>
 </body>
 </html>

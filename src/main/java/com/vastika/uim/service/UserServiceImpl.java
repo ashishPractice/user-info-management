@@ -1,5 +1,6 @@
 package com.vastika.uim.service;
 
+import com.vastika.uim.model.Role;
 import com.vastika.uim.model.User;
 import com.vastika.uim.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,19 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void saveUser(User user) {
+        Role role = new Role();
+        role.setId(2);
+        role.setRoleName("Role_User");
+        user.setRole(role);
         userRepository.saveUser(user);
     }
 
     @Override
     public void updateUser(User user) {
+        Role role = new Role();
+        role.setId(2);
+        role.setRoleName("Role_User");
+        user.setRole(role);
         userRepository.updateUser(user);
     }
 

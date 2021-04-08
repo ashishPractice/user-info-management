@@ -23,6 +23,9 @@ public class User {
     private String hobbies;
     private String comment;
 
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Role role;
+
     public int getId() {
         return id;
     }
@@ -101,6 +104,15 @@ public class User {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
