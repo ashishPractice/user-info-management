@@ -15,4 +15,7 @@ public interface UserService {
     User searchUserById(int id);
 
     List<User> getAllUser();
+
+    User searchUserByEmail(String email);
+
 }

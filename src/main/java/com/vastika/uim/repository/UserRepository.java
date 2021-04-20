@@ -17,4 +17,6 @@ public interface UserRepository {
     List<User> getAllUser();
 
     User findUserByUsername(String username);
+
+    User searchUserByEmail(String email);
 }

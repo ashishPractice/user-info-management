@@ -12,10 +12,10 @@
 
     <security:http use-expressions="true" auto-config="true">
 
-        <security:intercept-url pattern="/loginPage" access="permitAll" />
+        <security:intercept-url pattern="/login" access="permitAll" />
 
-<!--        <security:intercept-url pattern="/forgot-password"-->
-<!--                                access="permitAll" />-->
+        <security:intercept-url pattern="/forgotPassword"
+                                access="permitAll" />
 
         <security:intercept-url pattern="/accessDenied" access="permitAll" />
 
@@ -25,7 +25,7 @@
 <!--        <security:intercept-url pattern="/**"-->
 <!--                                access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')" />-->
 
-        <security:form-login login-processing-url="/loginPage"
+        <security:form-login login-page="/login"
                              always-use-default-target="true"
                              default-target-url="/home"
                              authentication-failure-url="/accessDenied" />

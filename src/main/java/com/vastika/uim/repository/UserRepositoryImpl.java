@@ -64,6 +64,15 @@ public class UserRepositoryImpl implements UserRepository{
         return (User) criteria.uniqueResult();
     }
 
+    @Override
+    public User searchUserByEmail(String email) {
+        Session session = getSession();
+        Criteria criteria = session.createCriteria(User.class)
+                .add(Restrictions.eq("email",email));
+
+        return (User) criteria.uniqueResult();
+    }
+
     public Session getSession(){
         Session session = sessionFactory.getCurrentSession();
         if(session== null){
